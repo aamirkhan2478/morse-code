@@ -32,3 +32,12 @@ def decode_char(letter)
     return @letter
 end
 
+def decode_word(word)
+    @word_array = word.split
+    @current_char = ''
+    @word_array.each do |one_word|
+        @current_char += decode_char(one_word)
+    end
+    print "#{@current_char} "
+end
+
