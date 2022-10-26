@@ -38,14 +38,16 @@ def decode_word(word)
   @word_array.each do |one_word|
     @current_char += decode_char(one_word)
   end
-  print "#{@current_char} "
+  @current_char
 end
 
 def decode_message(message)
   @message_arr = message.split('   ')
+  decoded_msg = ''
   @message_arr.each do |msg|
-    decode_word(msg)
+    decoded_msg += "#{decode_word(msg)} "
   end
+  decoded_msg.strip
 end
 
-decode_message('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+print decode_message('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
