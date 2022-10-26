@@ -41,3 +41,12 @@ def decode_word(word)
     print "#{@current_char} "
 end
 
+def decode_message(message)
+    @message_arr= message.split("   ")
+    @message_arr.each do |msg|
+        decode_word(msg)
+    end
+end
+
+decode_message(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
+
